@@ -9,10 +9,22 @@ const names = ["Izzy", "Matt", "City", "Kandyce"];
 
 // Loop over the names array and print out each name to the console
 
-function printNames() {
-    for (let i = 0; i < names.length; i++) {
-        console.log(names[i]);
-    }
+function add(num1, num2) {
+    console.log(num1);
+    return num1 + num2;
 }
 
-printNames();
+// store to the varialble result what add answers back with
+const result = add();
+
+console.log(result);
+// add(10, 5);
+// add(20, 100);
+// add(50, 5);
+
+
+// function printVals(str, bool, num, names) {
+//     console.log(names[1]);
+// }
+
+// printVals("some string", true, 15, ["Michael", "Nina", "Roman"]);
