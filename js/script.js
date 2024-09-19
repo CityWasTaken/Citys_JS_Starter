@@ -1,17 +1,35 @@
-const notes = ["City is dope", "create a constant", "use the src attribute ton the script tag to load a js flie"]
+let userData = {
+    name: "City",
+    age: 27,
+    phone: "322-332-3232",
+    adress: "32 coding ave",
+    info: {
+        location: "Jersey area",
+        hobbies: ["Music", "Gaming"]
+    },
+    printAge: function () {
+        console.log(this.age);
+    },
+    haveBirthday: function() {
+        // increase age by one
+        this.age ++;
+        // print "Happy Birthday" tp the console
+        console.log("Happy Birthday");
+    },
+    addHobby: function(){
+        // Need to reference and arguement that is passed to addHobby (string of a hobby)
+        this.info.hobbies
+        // push the arguement(hobby) to the info.hobbies array
+        this.info.hobbies.push("dancing");
+    },
+    printHobbies: function() {
+        // console.log the hobbies array
+        console.log(this.info.hobbies)
+        // BONES - loop over the hobbies array and console.log each hobby
 
-console.log(notes.length);
+    }
+};
 
-notes.push("Copilot is a great help!");
-
-console.log(notes.length);
-
-notes.unshift("css is crazy");
-
-console.log(unshift);
-
-const notes2 = notes;
-
-notes2.splice(1, 2);
-
-console.log(notes2);
+userData.printHobbies();
+userData.addHobby();
+userData.printHobbies();
