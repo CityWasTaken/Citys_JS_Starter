@@ -1,30 +1,17 @@
-const names = ["Izzy", "Matt", "City", "Kandyce"];
+const notes = ["City is dope", "create a constant", "use the src attribute ton the script tag to load a js flie"]
 
-// function doSomething() {
-//     console.log("DO SOMETHING!");
-//     console.log("ANOTHER SOMETHING!");
-//     console.log("ONE MORE THING!");
-//     console.log("LAST THING!");
-// }
+console.log(notes.length);
 
-// Loop over the names array and print out each name to the console
+notes.push("Copilot is a great help!");
 
-function add(num1, num2) {
-    console.log(num1);
-    return num1 + num2;
-}
+console.log(notes.length);
 
-// store to the varialble result what add answers back with
-const result = add();
+notes.unshift("css is crazy");
 
-console.log(result);
-// add(10, 5);
-// add(20, 100);
-// add(50, 5);
+console.log(unshift);
 
+const notes2 = notes;
 
-// function printVals(str, bool, num, names) {
-//     console.log(names[1]);
-// }
+notes2.splice(1, 2);
 
-// printVals("some string", true, 15, ["Michael", "Nina", "Roman"]);
+console.log(notes2);
