@@ -16,20 +16,25 @@ let userData = {
         // print "Happy Birthday" tp the console
         console.log("Happy Birthday");
     },
-    addHobby: function(){
+    addHobby: function(hobby) {
         // Need to reference and arguement that is passed to addHobby (string of a hobby)
-        this.info.hobbies
+
         // push the arguement(hobby) to the info.hobbies array
-        this.info.hobbies.push("dancing");
+        this.info.hobbies.push(hobby);
     },
     printHobbies: function() {
         // console.log the hobbies array
-        console.log(this.info.hobbies)
+        console.log(this.info.hobbies);
         // BONES - loop over the hobbies array and console.log each hobby
-
+        for (let hobby of this.info.hobbies) {
+            console.log(hobby);
+        }
     }
 };
 
 userData.printHobbies();
-userData.addHobby();
+userData.printHobbies();
+userData.addHobby("golf");
+userData.addHobby("golf");
+userData.addHobby("golf");
 userData.printHobbies();
