@@ -1,57 +1,29 @@
-const header = document.querySelector("h1");
-const paragraph = document.querySelector(".special");
-const image = document.querySelector("#main-image");
 const noteOutput = document.querySelector(".output");
-const timerDisplay = document.querySelector("#time");
-const buttonTimer = document.querySelector("#start-button");
-const buttonRestart = document.querySelector("#restart-button");
-
-header.classList.add("crazy");
-
-header.style.textDecoration = "underline";
-
-// image.setAttribute("src", "https://images.pexels.com/photos/27700804/pexels-photo-27700804/free-photo-of-a-man-is-riding-a-boat-through-a-tunnel.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+const addNoteButton = document.querySelector("#add-btn");
 
 // Insert a new article element into the output section
 
-noteOutput.insertAdjacentHTML("beforeend", `
-    <article>
-        <h3>new note text</h3>
-        <p>Added On: 09-20-2024<p>
+
+
+
+function getInfo () {
+    const title = prompt("Please provide the title!");
+    const textContent = prompt("Please provide the text!");
+    const date = new Date();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const year = date.getFullYear();
+    const dateOutput = month + "/" + day + "/" + year;
+
+    console.log(dateOutput);
+    // Using the title and textContent above, insert a new artivle into the output section
+    noteOutput.insertAdjacentHTML("beforeend", `
+    <article class="border border-subtle p-2 rounded-4 text-secondary">
+        <h3>${title}</h3>
+        <p>${textContent}</p>
+        <p>Added On: ${dateOutput}</p>
     </article>
     `);
+}
 
-// Timers
-
-// window.setTimeout(function () {
-//     console.log("time up!");
-// }, 3000);
-
-let count = 10;
-let started = false
-
-
-buttonTimer.addEventListener("click", function() {
-    if (!started) {
-        const timer = setInterval(function () {
-            count--;
-        
-            timerDisplay.innerText = "Time: " + count;    
-        
-            if (count <= 0) {
-                clearInterval(timer);     
-            
-            timerDisplay.innerText = "Time: 10";
-                count = 10;
-                started = false;
-            }
-        }, 500);
-
-        started = true;
-    }
-});
-
-buttonRestart.addEventListener("click", function() {
-    if (count < 10)
-        clearInterval(timer.timerDisplay)
-});
+addNoteButton.addEventListener("click", getInfo);
