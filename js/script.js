@@ -2,8 +2,9 @@ const header = document.querySelector("h1");
 const paragraph = document.querySelector(".special");
 const image = document.querySelector("#main-image");
 const noteOutput = document.querySelector(".output");
-const timerDisplay = document.querySelector("#time")
-const buttonTimer = document.querySelector("#start-button")
+const timerDisplay = document.querySelector("#time");
+const buttonTimer = document.querySelector("#start-button");
+const buttonRestart = document.querySelector("#restart-button");
 
 header.classList.add("crazy");
 
@@ -38,6 +39,26 @@ buttonTimer.addEventListener("click", function() {
             timerDisplay.innerText = "Time: " + count;    
         
             if (count <= 0) {
+                clearInterval(timer);     
+            
+            timerDisplay.innerText = "Time: 10";
+                count = 10;
+                started = false;
+            }
+        }, 500);
+
+        started = true;
+    }
+});
+
+buttonRestart.addEventListener("click", function() {
+    if (!started) {
+        const timer = setInterval(function () {
+            count--;
+        
+            timerDisplay.innerText = "Time: " + count;    
+        
+            if (count >= 0) {
                 clearInterval(timer);     
             
             timerDisplay.innerText = "Time: 10";
