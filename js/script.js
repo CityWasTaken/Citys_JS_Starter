@@ -52,21 +52,6 @@ buttonTimer.addEventListener("click", function() {
 });
 
 buttonRestart.addEventListener("click", function() {
-    if (!started) {
-        const timer = setInterval(function () {
-            count--;
-        
-            timerDisplay.innerText = "Time: " + count;    
-        
-            if (count >= 0) {
-                clearInterval(timer);     
-            
-            timerDisplay.innerText = "Time: 10";
-                count = 10;
-                started = false;
-            }
-        }, 500);
-
-        started = true;
-    }
+    if (count < 10)
+        clearInterval(timer.timerDisplay)
 });
